@@ -25,6 +25,8 @@
 		F4EE5C4F1FA49330002D932B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE5C421FA49330002D932B /* ViewController+MASAdditions.m */; };
 		F4EE5C501FA49330002D932B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE5C431FA49330002D932B /* ViewController.m */; };
 		F4EE5C521FA49371002D932B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EE5C511FA49371002D932B /* Main.storyboard */; };
+		F4EE5C561FA4BBA7002D932B /* MyCustomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE5C551FA4BBA7002D932B /* MyCustomModel.m */; };
+		F4EE5C591FA4BF84002D932B /* XUpdateLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE5C581FA4BF84002D932B /* XUpdateLayoutTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,10 @@
 		F4EE5C421FA49330002D932B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		F4EE5C431FA49330002D932B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F4EE5C511FA49371002D932B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F4EE5C541FA4BBA7002D932B /* MyCustomModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCustomModel.h; sourceTree = "<group>"; };
+		F4EE5C551FA4BBA7002D932B /* MyCustomModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCustomModel.m; sourceTree = "<group>"; };
+		F4EE5C571FA4BF84002D932B /* XUpdateLayoutTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XUpdateLayoutTableViewCell.h; sourceTree = "<group>"; };
+		F4EE5C581FA4BF84002D932B /* XUpdateLayoutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XUpdateLayoutTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,13 +104,14 @@
 		F4EE5C0D1FA492CF002D932B /* FPSProfileDemo */ = {
 			isa = PBXGroup;
 			children = (
-				F4EE5C511FA49371002D932B /* Main.storyboard */,
+				F4EE5C531FA4BB69002D932B /* Model */,
 				F4EE5C241FA4932F002D932B /* Cell */,
 				F4EE5C281FA4932F002D932B /* Masonry */,
 				F4EE5C271FA4932F002D932B /* ViewController.h */,
 				F4EE5C431FA49330002D932B /* ViewController.m */,
 				F4EE5C0E1FA492CF002D932B /* AppDelegate.h */,
 				F4EE5C0F1FA492CF002D932B /* AppDelegate.m */,
+				F4EE5C511FA49371002D932B /* Main.storyboard */,
 				F4EE5C171FA492CF002D932B /* Assets.xcassets */,
 				F4EE5C191FA492CF002D932B /* LaunchScreen.storyboard */,
 				F4EE5C1C1FA492CF002D932B /* Info.plist */,
@@ -118,6 +125,8 @@
 			children = (
 				F4EE5C251FA4932F002D932B /* XBaseTableViewCell.h */,
 				F4EE5C261FA4932F002D932B /* XBaseTableViewCell.m */,
+				F4EE5C571FA4BF84002D932B /* XUpdateLayoutTableViewCell.h */,
+				F4EE5C581FA4BF84002D932B /* XUpdateLayoutTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -153,6 +162,15 @@
 				F4EE5C421FA49330002D932B /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		F4EE5C531FA4BB69002D932B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4EE5C541FA4BBA7002D932B /* MyCustomModel.h */,
+				F4EE5C551FA4BBA7002D932B /* MyCustomModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +248,8 @@
 				F4EE5C501FA49330002D932B /* ViewController.m in Sources */,
 				F4EE5C4D1FA49330002D932B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				F4EE5C4B1FA49330002D932B /* MASViewConstraint.m in Sources */,
+				F4EE5C591FA4BF84002D932B /* XUpdateLayoutTableViewCell.m in Sources */,
+				F4EE5C561FA4BBA7002D932B /* MyCustomModel.m in Sources */,
 				F4EE5C461FA49330002D932B /* MASCompositeConstraint.m in Sources */,
 				F4EE5C4C1FA49330002D932B /* NSArray+MASAdditions.m in Sources */,
 				F4EE5C441FA49330002D932B /* XBaseTableViewCell.m in Sources */,

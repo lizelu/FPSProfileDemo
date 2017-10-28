@@ -29,6 +29,17 @@
     }
     return self;
 }
+-(void)setCellInfo:(MyCustomModel *)model {
+    [self.headerImageView setImage:[UIImage imageNamed:model.headerImageName]];
+    self.titleLabel.text = model.title;
+    self.firstLineDetailLabel.text = model.firstText;
+    self.secondLineDetailLabel.text = model.secondText;
+    self.thirdLineDetailLabel.text = model.thirdText;
+    self.forthLineDetailLabel.text = model.forthText;
+    self.fifthLineDetailLabel.text = model.fifthText;
+    self.sixthLineDetailLabel.text = model.sixthText;
+    self.seventhLineDetailLabel.text = model.seventhText;
+}
 
 -(void)setupSubviews {
     [self createLabel:_firstLineDetailLabel];
@@ -42,11 +53,11 @@
 }
 
 -(void)addLayoutSubViews {
-    
+    //子类重写
 }
 
 -(void)updateLayoutSubViews {
-    
+    //子类重写
 }
 
 #pragma - private method
