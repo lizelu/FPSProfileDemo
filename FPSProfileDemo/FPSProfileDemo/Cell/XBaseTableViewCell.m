@@ -18,6 +18,7 @@
     return self;
 }
 - (void)setCellInfo:(MyCustomModel *)model {
+    self.model = model;
     [self.headerImageView setImage:[UIImage imageNamed:model.headerImageName]];
     self.titleLabel.text = model.title;
     self.firstLineDetailLabel.text = model.firstText;
@@ -39,6 +40,7 @@
     [self createLabel:_fifthLineDetailLabel];
     [self createLabel:_sixthLineDetailLabel];
     [self createLabel:_seventhLineDetailLabel];
+    [self addLineView];
     [self addLayoutSubViews];
 }
 
@@ -48,8 +50,9 @@
 
 - (void)updateLayoutSubViews {
     //子类重写
-//    [self.];
 }
+
+
 
 #pragma - private method
 - (void)addHeaderImageView {
@@ -60,9 +63,15 @@
 
 - (void)addTitlLabel {
     self.titleLabel = [UILabel new];
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
     self.titleLabel.textColor = [UIColor darkTextColor];
     [self.contentView addSubview:self.titleLabel];
+}
+
+-(void)addLineView {
+    self.lineView = [[UIView alloc] init];
+    self.lineView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [self.contentView addSubview:self.lineView];
 }
 
 - (void)createLabel:(UILabel *)label {
