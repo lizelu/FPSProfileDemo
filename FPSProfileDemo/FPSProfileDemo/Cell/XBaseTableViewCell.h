@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "MyCustomModel.h"
+#import "Masonry.h"
 
 @interface XBaseTableViewCell : UITableViewCell
+@property (nonatomic, strong) UIImageView *headerImageView;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *firstLineDetailLabel;
+@property (nonatomic, strong) UILabel *secondLineDetailLabel;
+@property (nonatomic, strong) UILabel *thirdLineDetailLabel;
+@property (nonatomic, strong) UILabel *forthLineDetailLabel;
+@property (nonatomic, strong) UILabel *fifthLineDetailLabel;
+@property (nonatomic, strong) UILabel *sixthLineDetailLabel;
+@property (nonatomic, strong) UILabel *seventhLineDetailLabel;
 
 /**
  设置Cell的值
