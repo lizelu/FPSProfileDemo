@@ -12,11 +12,7 @@
 #import "XUpdateLayoutTableViewCell.h"
 #import "XRemakeLayoutTableViewCell.h"
 #import "XMakeLayoutTableViewCell.h"
-
-#define UpdateCellReuseIdentifer @"XUpdateLayoutTableViewCell"
-#define RemakeCellReuseIdentifer @"XRemakeLayoutTableViewCell"
-#define MakeCellReuseIdentifer @"XMakeLayoutTableViewCell"
-#define FrameCellReuseIdentifer @"XFrameLayoutTableViewCell"
+#import "XFrameLayoutTableViewCell.h"
 
 typedef NS_ENUM (NSInteger, MyCellType) {
     UpdateCellType = 0,
@@ -42,11 +38,16 @@ typedef NS_ENUM (NSInteger, MyCellType) {
     self.viewModel = [[XViewModel alloc] init];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.cellReuseIdentifier = UpdateCellReuseIdentifer;
-    [self.tableView registerClass:[XUpdateLayoutTableViewCell class] forCellReuseIdentifier:UpdateCellReuseIdentifer];
-    [self.tableView registerClass:[XRemakeLayoutTableViewCell class] forCellReuseIdentifier:RemakeCellReuseIdentifer];
-    [self.tableView registerClass:[XMakeLayoutTableViewCell class] forCellReuseIdentifier:MakeCellReuseIdentifer];
+    self.cellReuseIdentifier = NSStringFromClass([XUpdateLayoutTableViewCell class]);
+    [self registCellForTableView:[XUpdateLayoutTableViewCell class]];
+    [self registCellForTableView:[XRemakeLayoutTableViewCell class]];
+    [self registCellForTableView:[XMakeLayoutTableViewCell class]];
+    [self registCellForTableView:[XFrameLayoutTableViewCell class]];
     [self loadData];
+}
+
+-(void)registCellForTableView:(Class)class {
+    [self.tableView registerClass:class forCellReuseIdentifier:NSStringFromClass(class)];
 }
 
 -(void)loadData {
@@ -71,16 +72,16 @@ typedef NS_ENUM (NSInteger, MyCellType) {
     NSString *identifier;
     switch (sender.selectedSegmentIndex) {
         case UpdateCellType:
-            identifier = UpdateCellReuseIdentifer;
+            identifier = NSStringFromClass([XUpdateLayoutTableViewCell class]);
             break;
         case RemakeCellType:
-            identifier = RemakeCellReuseIdentifer;
+            identifier = NSStringFromClass([XRemakeLayoutTableViewCell class]);
             break;
         case MakeCellType:
-            identifier = MakeCellReuseIdentifer;
+            identifier = NSStringFromClass([XMakeLayoutTableViewCell class]);
             break;
         case FrameCellType:
-            identifier = FrameCellReuseIdentifer;
+            identifier = NSStringFromClass([XFrameLayoutTableViewCell class]);
             break;
     }
     self.cellReuseIdentifier = identifier;

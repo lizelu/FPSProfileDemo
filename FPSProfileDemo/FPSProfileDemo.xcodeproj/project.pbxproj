@@ -19,6 +19,8 @@
 		F449150F1FA5EA590036560E /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F44915051FA5EA590036560E /* 9.jpg */; };
 		F44915121FA5F6A90036560E /* XRemakeLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F44915111FA5F6A90036560E /* XRemakeLayoutTableViewCell.m */; };
 		F44915151FA5FA600036560E /* XMakeLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F44915141FA5FA600036560E /* XMakeLayoutTableViewCell.m */; };
+		F44915181FA5FEFB0036560E /* XFrameLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F44915171FA5FEFB0036560E /* XFrameLayoutTableViewCell.m */; };
+		F449151C1FA602860036560E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F449151B1FA602860036560E /* UIView+Frame.m */; };
 		F4EE5C101FA492CF002D932B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE5C0F1FA492CF002D932B /* AppDelegate.m */; };
 		F4EE5C181FA492CF002D932B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EE5C171FA492CF002D932B /* Assets.xcassets */; };
 		F4EE5C1B1FA492CF002D932B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EE5C191FA492CF002D932B /* LaunchScreen.storyboard */; };
@@ -58,6 +60,10 @@
 		F44915111FA5F6A90036560E /* XRemakeLayoutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRemakeLayoutTableViewCell.m; sourceTree = "<group>"; };
 		F44915131FA5FA600036560E /* XMakeLayoutTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMakeLayoutTableViewCell.h; sourceTree = "<group>"; };
 		F44915141FA5FA600036560E /* XMakeLayoutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMakeLayoutTableViewCell.m; sourceTree = "<group>"; };
+		F44915161FA5FEFB0036560E /* XFrameLayoutTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XFrameLayoutTableViewCell.h; sourceTree = "<group>"; };
+		F44915171FA5FEFB0036560E /* XFrameLayoutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XFrameLayoutTableViewCell.m; sourceTree = "<group>"; };
+		F449151A1FA602860036560E /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		F449151B1FA602860036560E /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		F4EE5C0B1FA492CF002D932B /* FPSProfileDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPSProfileDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EE5C0E1FA492CF002D932B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4EE5C0F1FA492CF002D932B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -182,6 +188,10 @@
 				F44915111FA5F6A90036560E /* XRemakeLayoutTableViewCell.m */,
 				F44915131FA5FA600036560E /* XMakeLayoutTableViewCell.h */,
 				F44915141FA5FA600036560E /* XMakeLayoutTableViewCell.m */,
+				F44915161FA5FEFB0036560E /* XFrameLayoutTableViewCell.h */,
+				F44915171FA5FEFB0036560E /* XFrameLayoutTableViewCell.m */,
+				F449151A1FA602860036560E /* UIView+Frame.h */,
+				F449151B1FA602860036560E /* UIView+Frame.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -347,6 +357,7 @@
 				F4EE5C561FA4BBA7002D932B /* MyCustomModel.m in Sources */,
 				F4EE5C461FA49330002D932B /* MASCompositeConstraint.m in Sources */,
 				F4EE5C781FA4CAA2002D932B /* XViewModel.m in Sources */,
+				F449151C1FA602860036560E /* UIView+Frame.m in Sources */,
 				F4EE5C4C1FA49330002D932B /* NSArray+MASAdditions.m in Sources */,
 				F4EE5C441FA49330002D932B /* XBaseTableViewCell.m in Sources */,
 				F4EE5C1E1FA492CF002D932B /* main.m in Sources */,
@@ -357,6 +368,7 @@
 				F4EE5C4A1FA49330002D932B /* MASViewAttribute.m in Sources */,
 				F4EE5C471FA49330002D932B /* MASConstraint.m in Sources */,
 				F4EE5C481FA49330002D932B /* MASConstraintMaker.m in Sources */,
+				F44915181FA5FEFB0036560E /* XFrameLayoutTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
