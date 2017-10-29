@@ -35,16 +35,17 @@
     [self setAttributeStringToLabel:self.eighthLineDetailLabel text:model.eighthText];
     [self setAttributeStringToLabel:self.ninthLineDetailLabel text:model.ninthText];
     [self setAttributeStringToLabel:self.tenthLineDetailLabel text:model.tenthText];
-    dispatch_group_wait(self.attrGroup, DISPATCH_TIME_FOREVER);
-    dispatch_group_notify(self.attrGroup, dispatch_get_main_queue(), ^{
-        [self updateLayoutSubViews];
-    });
-//    [self updateLayoutSubViews];
+    [self updateLayoutSubViews];
+    
+//    dispatch_group_wait(self.attrGroup, DISPATCH_TIME_FOREVER);
+//    dispatch_group_notify(self.attrGroup, dispatch_get_main_queue(), ^{
+//        [self updateLayoutSubViews];
+//    });
 }
 
 -(void)setAttributeStringToLabel:(UILabel *)label text:(NSString *)text {
-   // [self setAttributeStringToLabelInMainThread:label text:text];
-    [self setAttributeStringToLabelInSubThread:label text:text];
+    [self setAttributeStringToLabelInMainThread:label text:text];
+//    [self setAttributeStringToLabelInSubThread:label text:text];
 }
 
 -(void)setAttributeStringToLabelInMainThread:(UILabel *)label text:(NSString *)text {

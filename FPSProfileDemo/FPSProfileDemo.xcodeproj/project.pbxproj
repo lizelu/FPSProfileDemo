@@ -21,6 +21,8 @@
 		F44915151FA5FA600036560E /* XMakeLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F44915141FA5FA600036560E /* XMakeLayoutTableViewCell.m */; };
 		F44915181FA5FEFB0036560E /* XFrameLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F44915171FA5FEFB0036560E /* XFrameLayoutTableViewCell.m */; };
 		F449151C1FA602860036560E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F449151B1FA602860036560E /* UIView+Frame.m */; };
+		F44915201FA6142A0036560E /* FPSDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = F449151F1FA6142A0036560E /* FPSDisplay.m */; };
+		F44915231FA61B010036560E /* XMakeAndFrameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F44915221FA61B010036560E /* XMakeAndFrameTableViewCell.m */; };
 		F4EE5C101FA492CF002D932B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE5C0F1FA492CF002D932B /* AppDelegate.m */; };
 		F4EE5C181FA492CF002D932B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EE5C171FA492CF002D932B /* Assets.xcassets */; };
 		F4EE5C1B1FA492CF002D932B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EE5C191FA492CF002D932B /* LaunchScreen.storyboard */; };
@@ -64,6 +66,10 @@
 		F44915171FA5FEFB0036560E /* XFrameLayoutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XFrameLayoutTableViewCell.m; sourceTree = "<group>"; };
 		F449151A1FA602860036560E /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		F449151B1FA602860036560E /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		F449151E1FA6142A0036560E /* FPSDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPSDisplay.h; sourceTree = "<group>"; };
+		F449151F1FA6142A0036560E /* FPSDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPSDisplay.m; sourceTree = "<group>"; };
+		F44915211FA61B010036560E /* XMakeAndFrameTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMakeAndFrameTableViewCell.h; sourceTree = "<group>"; };
+		F44915221FA61B010036560E /* XMakeAndFrameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMakeAndFrameTableViewCell.m; sourceTree = "<group>"; };
 		F4EE5C0B1FA492CF002D932B /* FPSProfileDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPSProfileDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EE5C0E1FA492CF002D932B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4EE5C0F1FA492CF002D932B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,6 +146,15 @@
 			path = ImageSource;
 			sourceTree = "<group>";
 		};
+		F449151D1FA6142A0036560E /* FPSDisplayTool */ = {
+			isa = PBXGroup;
+			children = (
+				F449151E1FA6142A0036560E /* FPSDisplay.h */,
+				F449151F1FA6142A0036560E /* FPSDisplay.m */,
+			);
+			path = FPSDisplayTool;
+			sourceTree = "<group>";
+		};
 		F4EE5C021FA492CF002D932B = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +174,7 @@
 		F4EE5C0D1FA492CF002D932B /* FPSProfileDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F449151D1FA6142A0036560E /* FPSDisplayTool */,
 				F44914FB1FA5EA590036560E /* ImageSource */,
 				F4EE5C741FA4CA5E002D932B /* ViewModel */,
 				F4EE5C731FA4CA43002D932B /* ViewController */,
@@ -190,6 +206,8 @@
 				F44915141FA5FA600036560E /* XMakeLayoutTableViewCell.m */,
 				F44915161FA5FEFB0036560E /* XFrameLayoutTableViewCell.h */,
 				F44915171FA5FEFB0036560E /* XFrameLayoutTableViewCell.m */,
+				F44915211FA61B010036560E /* XMakeAndFrameTableViewCell.h */,
+				F44915221FA61B010036560E /* XMakeAndFrameTableViewCell.m */,
 				F449151A1FA602860036560E /* UIView+Frame.h */,
 				F449151B1FA602860036560E /* UIView+Frame.m */,
 			);
@@ -357,6 +375,7 @@
 				F4EE5C561FA4BBA7002D932B /* MyCustomModel.m in Sources */,
 				F4EE5C461FA49330002D932B /* MASCompositeConstraint.m in Sources */,
 				F4EE5C781FA4CAA2002D932B /* XViewModel.m in Sources */,
+				F44915201FA6142A0036560E /* FPSDisplay.m in Sources */,
 				F449151C1FA602860036560E /* UIView+Frame.m in Sources */,
 				F4EE5C4C1FA49330002D932B /* NSArray+MASAdditions.m in Sources */,
 				F4EE5C441FA49330002D932B /* XBaseTableViewCell.m in Sources */,
@@ -368,6 +387,7 @@
 				F4EE5C4A1FA49330002D932B /* MASViewAttribute.m in Sources */,
 				F4EE5C471FA49330002D932B /* MASConstraint.m in Sources */,
 				F4EE5C481FA49330002D932B /* MASConstraintMaker.m in Sources */,
+				F44915231FA61B010036560E /* XMakeAndFrameTableViewCell.m in Sources */,
 				F44915181FA5FEFB0036560E /* XFrameLayoutTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AWN3A347S4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FPSProfileDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -511,6 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AWN3A347S4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FPSProfileDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

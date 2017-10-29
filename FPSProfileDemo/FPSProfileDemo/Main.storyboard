@@ -62,13 +62,14 @@
                     <navigationItem key="navigationItem" id="LDH-a3-swf">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="3Pe-P4-gLz">
-                            <rect key="frame" x="68" y="7" width="239" height="30"/>
+                            <rect key="frame" x="38" y="7" width="299" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="update"/>
                                 <segment title="remake"/>
                                 <segment title="make"/>
                                 <segment title="frame"/>
+                                <segment title="m+f"/>
                             </segments>
                             <connections>
                                 <action selector="tapSegmentControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="24U-DU-Jj7"/>

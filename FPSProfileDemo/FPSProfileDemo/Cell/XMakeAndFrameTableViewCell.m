@@ -1,14 +1,15 @@
 //
-//  XMakeLayoutTableViewCell.m
+//  XMakeAndFrameTableViewCell.m
 //  FPSProfileDemo
 //
 //  Created by lizelu on 2017/10/29.
 //  Copyright © 2017年 Mr.ZeluLi. All rights reserved.
 //
 
-#import "XMakeLayoutTableViewCell.h"
+#import "XMakeAndFrameTableViewCell.h"
+#import "UIView+Frame.h"
 
-@implementation XMakeLayoutTableViewCell
+@implementation XMakeAndFrameTableViewCell
 - (void)addLayoutSubViews {
     [self.headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.bottom.equalTo(@0);
@@ -32,7 +33,7 @@
     [self addLayoutForDetailLabel:self.eighthLineDetailLabel toLabel:self.seventhLineDetailLabel];
     [self addLayoutForDetailLabel:self.ninthLineDetailLabel toLabel:self.eighthLineDetailLabel];
     [self addLayoutForDetailLabel:self.tenthLineDetailLabel toLabel:self.ninthLineDetailLabel];
-
+    
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(@0);
         make.height.equalTo(@2);
@@ -60,23 +61,29 @@
     [self updateLayoutForDetailLabel:self.eighthLineDetailLabel toLabel:self.seventhLineDetailLabel];
     [self updateLayoutForDetailLabel:self.ninthLineDetailLabel toLabel:self.eighthLineDetailLabel];
     [self updateLayoutForDetailLabel:self.tenthLineDetailLabel toLabel:self.ninthLineDetailLabel];
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
+//    [self setNeedsLayout];
+//    [self layoutIfNeeded];
 }
 
 - (void)updateLayoutForDetailLabel:(UILabel *)label toLabel:(UILabel *)toLabel
 {
-    [label mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(toLabel.mas_left);
-        make.right.equalTo(toLabel.mas_right);
-        CGFloat top = 0;
-        CGFloat height = 0;
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 0);
+    dispatch_after(time, dispatch_get_main_queue(), ^{
+        CGRect frame = label.frame;
+        frame.origin.y = 0;
         if (label.text.length) {
-            top = 5;
-            height = 12;
+            frame.origin.y = toLabel.bottom + 5;
+            frame.size.height = 12;
+        } else {
+            frame.origin.y = toLabel.bottom;
+            frame.size.height = 0;
         }
-        make.top.equalTo(toLabel.mas_bottom).offset(top);
-        make.height.equalTo(@(height));
-    }];
+        label.frame = frame;
+    });
 }
+
+-(void)layoutSubviews {
+    [self updateLayoutSubViews];
+}
+
 @end

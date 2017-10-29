@@ -13,12 +13,14 @@
 #import "XRemakeLayoutTableViewCell.h"
 #import "XMakeLayoutTableViewCell.h"
 #import "XFrameLayoutTableViewCell.h"
+#import "XMakeAndFrameTableViewCell.h"
 
 typedef NS_ENUM (NSInteger, MyCellType) {
     UpdateCellType = 0,
     RemakeCellType,
     MakeCellType,
-    FrameCellType
+    FrameCellType,
+    MakeAndFrameCellType
 };
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -43,6 +45,7 @@ typedef NS_ENUM (NSInteger, MyCellType) {
     [self registCellForTableView:[XRemakeLayoutTableViewCell class]];
     [self registCellForTableView:[XMakeLayoutTableViewCell class]];
     [self registCellForTableView:[XFrameLayoutTableViewCell class]];
+    [self registCellForTableView:[XMakeAndFrameTableViewCell class]];
     [self loadData];
 }
 
@@ -83,6 +86,10 @@ typedef NS_ENUM (NSInteger, MyCellType) {
         case FrameCellType:
             identifier = NSStringFromClass([XFrameLayoutTableViewCell class]);
             break;
+        case MakeAndFrameCellType:
+            identifier = NSStringFromClass([XMakeAndFrameTableViewCell class]);
+            break;
+            
     }
     self.cellReuseIdentifier = identifier;
     [self.tableView reloadData];
