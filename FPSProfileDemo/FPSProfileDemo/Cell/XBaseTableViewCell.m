@@ -28,18 +28,19 @@
     self.fifthLineDetailLabel.text = model.fifthText;
     self.sixthLineDetailLabel.text = model.sixthText;
     self.seventhLineDetailLabel.text = model.seventhText;
+    [self updateLayoutSubViews];
 }
 
 - (void)setupSubviews {
     [self addHeaderImageView];
     [self addTitlLabel];
-    [self createLabel:_firstLineDetailLabel];
-    [self createLabel:_secondLineDetailLabel];
-    [self createLabel:_thirdLineDetailLabel];
-    [self createLabel:_forthLineDetailLabel];
-    [self createLabel:_fifthLineDetailLabel];
-    [self createLabel:_sixthLineDetailLabel];
-    [self createLabel:_seventhLineDetailLabel];
+    _firstLineDetailLabel = [self createDetailLabel];
+    _secondLineDetailLabel = [self createDetailLabel];
+    _thirdLineDetailLabel = [self createDetailLabel];
+    _forthLineDetailLabel = [self createDetailLabel];
+    _fifthLineDetailLabel = [self createDetailLabel];
+    _sixthLineDetailLabel = [self createDetailLabel];
+    _seventhLineDetailLabel = [self createDetailLabel];
     [self addLineView];
     [self addLayoutSubViews];
 }
@@ -57,7 +58,8 @@
 #pragma - private method
 - (void)addHeaderImageView {
     self.headerImageView = [UIImageView new];
-    self.headerImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.headerImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.headerImageView.clipsToBounds = YES;
     [self.contentView addSubview:self.headerImageView];
 }
 
@@ -74,11 +76,12 @@
     [self.contentView addSubview:self.lineView];
 }
 
-- (void)createLabel:(UILabel *)label {
-    label = [[UILabel alloc] init];
-    label.textColor = [UIColor lightTextColor];
+- (UILabel *)createDetailLabel {
+    UILabel *label = [[UILabel alloc] init];
+    label.textColor = [UIColor grayColor];
     label.font = [UIFont systemFontOfSize:15.0f];
     [self.contentView addSubview:label];
+    return label;
 }
 
 @end

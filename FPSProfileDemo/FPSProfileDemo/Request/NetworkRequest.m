@@ -36,17 +36,17 @@
 - (NSArray *)createRandomData {
     NSMutableArray *randomData = [[NSMutableArray alloc] initWithCapacity:20];
     for (int i = 0; i < 20; i++) {
-        int random = arc4random();
+        uint32_t random = arc4random();
         MyCustomModel *model = [[MyCustomModel alloc] init];
         model.headerImageName = [NSString stringWithFormat:@"%d.jpg", random%10];
         model.title = [NSString stringWithFormat:@"我是大标题标题%d", i];
-        model.firstText = random / 2 == 0 ? @"" : @"详情详情详情详情详情1";
-        model.secondText = random / 3 == 0 ? @"" : @"详情详情详情详情详详情情2";
-        model.thirdText = random / 4 == 0 ? @"" : @"详情详情详情详情3";
-        model.forthText = random / 5 == 0 ? @"" : @"详情详情详情详情4";
-        model.fifthText = random / 6 == 0 ? @"" : @"详情详情详情详情详情详情5";
-        model.sixthText = random / 7 == 0 ? @"" : @"详情详情详情详情6";
-        model.seventhText = random / 8 == 0 ? @"" : @"详情详情详情详情详情详情详情详情详情7";
+        model.firstText = random / 52 == 0 ? @"" : @"详情详情详情详情详情1";
+        model.secondText = random / 32 == 0 ? @"" : @"详情详情详情详情详详情情2";
+        model.thirdText = random / 98 == 0 ? @"" : @"详情详情详情详情3";
+        model.forthText = random / 45 == 0 ? @"" : @"详情详情详情详情4";
+        model.fifthText = random / 23 == 0 ? @"" : @"详情详情详情详情详情详情5";
+        model.sixthText = random / 65 == 0 ? @"" : @"详情详情详情详情6";
+        model.seventhText = random / 89 == 0 ? @"" : @"详情详情详情详情详情详情详情详情详情7";
         [randomData addObject:model];
     }
     return randomData;

@@ -21,34 +21,36 @@
     }];
     
     [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.left.equalTo(@10);
+        make.top.equalTo(@10);
+        make.left.equalTo(self.headerImageView.mas_right).offset(10);
         make.height.equalTo(@20);
         make.right.equalTo(@(-10));
     }];
     
-    [self addLayoutForDetailLabel:self.firstLineDetailLabel toLabel:self.titleLabel text:self.model.firstText];
-    [self addLayoutForDetailLabel:self.secondLineDetailLabel toLabel:self.firstLineDetailLabel text:self.model.secondText];
-    [self addLayoutForDetailLabel:self.thirdLineDetailLabel toLabel:self.secondLineDetailLabel text:self.model.thirdText];
-    [self addLayoutForDetailLabel:self.forthLineDetailLabel toLabel:self.thirdLineDetailLabel text:self.model.forthText];
-    [self addLayoutForDetailLabel:self.fifthLineDetailLabel toLabel:self.forthLineDetailLabel text:self.model.fifthText];
-    [self addLayoutForDetailLabel:self.sixthLineDetailLabel toLabel:self.fifthLineDetailLabel text:self.model.sixthText];
-    [self addLayoutForDetailLabel:self.seventhLineDetailLabel toLabel:self.sixthLineDetailLabel text:self.model.seventhText];
+    [self addLayoutForDetailLabel:self.firstLineDetailLabel toLabel:self.titleLabel];
+    [self addLayoutForDetailLabel:self.secondLineDetailLabel toLabel:self.firstLineDetailLabel];
+    [self addLayoutForDetailLabel:self.thirdLineDetailLabel toLabel:self.secondLineDetailLabel];
+    [self addLayoutForDetailLabel:self.forthLineDetailLabel toLabel:self.thirdLineDetailLabel];
+    [self addLayoutForDetailLabel:self.fifthLineDetailLabel toLabel:self.forthLineDetailLabel];
+    [self addLayoutForDetailLabel:self.sixthLineDetailLabel toLabel:self.fifthLineDetailLabel];
+    [self addLayoutForDetailLabel:self.seventhLineDetailLabel toLabel:self.sixthLineDetailLabel];
     
     [self.lineView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(@0);
         make.height.equalTo(@2);
     }];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
-- (void)addLayoutForDetailLabel:(UILabel *)label
-                        toLabel:(UILabel *)toLabel
-                           text:(NSString *)labelText
+- (void)addLayoutForDetailLabel:(UILabel *)label toLabel:(UILabel *)toLabel
 {
     [label mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(toLabel);
+        make.left.equalTo(toLabel.mas_left);
+        make.right.equalTo(toLabel.mas_right);
         CGFloat top = 0;
         CGFloat height = 0;
-        if (labelText.length) {
+        if (label.text.length) {
             top = 10;
             height = 15;
         }
