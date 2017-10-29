@@ -7,13 +7,16 @@
 //
 
 #import "XBaseTableViewCell.h"
-
+@interface XBaseTableViewCell()
+@property (nonatomic, strong) dispatch_group_t attrGroup;
+@end
 @implementation XBaseTableViewCell
 #pragma - public method
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.attrGroup = dispatch_group_create();
         [self setupSubviews];
     }
     return self;
@@ -21,19 +24,67 @@
 - (void)setCellInfo:(MyCustomModel *)model {
     self.model = model;
     [self.headerImageView setImage:[UIImage imageNamed:model.headerImageName]];
-    self.titleLabel.text = model.title;
-    self.firstLineDetailLabel.text = model.firstText;
-    self.secondLineDetailLabel.text = model.secondText;
-    self.thirdLineDetailLabel.text = model.thirdText;
-    self.forthLineDetailLabel.text = model.forthText;
-    self.fifthLineDetailLabel.text = model.fifthText;
-    self.sixthLineDetailLabel.text = model.sixthText;
-    self.seventhLineDetailLabel.text = model.seventhText;
-    self.eighthLineDetailLabel.text = model.eighthText;
-    self.ninthLineDetailLabel.text = model.ninthText;
-    self.tenthLineDetailLabel.text = model.tenthText;
-    [self updateLayoutSubViews];
+    [self setAttributeStringToLabel:self.titleLabel text:model.title];
+    [self setAttributeStringToLabel:self.firstLineDetailLabel text:model.firstText];
+    [self setAttributeStringToLabel:self.secondLineDetailLabel text:model.secondText];
+    [self setAttributeStringToLabel:self.thirdLineDetailLabel text:model.thirdText];
+    [self setAttributeStringToLabel:self.forthLineDetailLabel text:model.forthText];
+    [self setAttributeStringToLabel:self.fifthLineDetailLabel text:model.fifthText];
+    [self setAttributeStringToLabel:self.sixthLineDetailLabel text:model.sixthText];
+    [self setAttributeStringToLabel:self.seventhLineDetailLabel text:model.seventhText];
+    [self setAttributeStringToLabel:self.eighthLineDetailLabel text:model.eighthText];
+    [self setAttributeStringToLabel:self.ninthLineDetailLabel text:model.ninthText];
+    [self setAttributeStringToLabel:self.tenthLineDetailLabel text:model.tenthText];
+    dispatch_group_wait(self.attrGroup, DISPATCH_TIME_FOREVER);
+    dispatch_group_notify(self.attrGroup, dispatch_get_main_queue(), ^{
+        [self updateLayoutSubViews];
+    });
+//    [self updateLayoutSubViews];
 }
+
+-(void)setAttributeStringToLabel:(UILabel *)label text:(NSString *)text {
+   // [self setAttributeStringToLabelInMainThread:label text:text];
+    [self setAttributeStringToLabelInSubThread:label text:text];
+}
+
+-(void)setAttributeStringToLabelInMainThread:(UILabel *)label text:(NSString *)text {
+    
+    uint32_t offset = arc4random_uniform(text.length);
+    uint32_t length = arc4random_uniform(text.length - offset);
+    // 命中词语高亮显示
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text];
+    NSRange range = NSMakeRange(offset, length);
+    [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
+    label.attributedText = attrString;
+}
+
+-(void)setAttributeStringToLabelInSubThread:(UILabel *)label text:(NSString *)text {
+    dispatch_group_enter(self.attrGroup);
+    dispatch_group_async(self.attrGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        uint32_t offset = arc4random_uniform(text.length);
+        uint32_t length = arc4random_uniform(text.length - offset);
+        // 命中词语高亮显示
+        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text];
+        NSRange range = NSMakeRange(offset, length);
+        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            label.attributedText = attrString;
+        });
+        dispatch_group_leave(self.attrGroup);
+    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        uint32_t offset = rand() % text.length;
+//        uint32_t length = offset + rand() % (text.length - offset);
+//        // 命中词语高亮显示
+//        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text];
+//        NSRange range = NSMakeRange(offset, length);
+//        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            label.attributedText = attrString;
+//        });
+//    });
+}
+
 
 - (void)setupSubviews {
     [self addHeaderImageView];
