@@ -18,4 +18,8 @@
 @property (nonatomic, strong) NSString * fifthText;
 @property (nonatomic, strong) NSString * sixthText;
 @property (nonatomic, strong) NSString * seventhText;
+@property (nonatomic, strong) NSString * eighthText;
+@property (nonatomic, strong) NSString * ninthText;
+@property (nonatomic, strong) NSString * tenthText;
+
 @end

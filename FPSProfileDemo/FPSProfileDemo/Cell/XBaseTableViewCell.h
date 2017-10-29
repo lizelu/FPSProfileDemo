@@ -20,10 +20,11 @@
 @property (nonatomic, strong) UILabel *fifthLineDetailLabel;
 @property (nonatomic, strong) UILabel *sixthLineDetailLabel;
 @property (nonatomic, strong) UILabel *seventhLineDetailLabel;
+@property (nonatomic, strong) UILabel *eighthLineDetailLabel;
+@property (nonatomic, strong) UILabel *ninthLineDetailLabel;
+@property (nonatomic, strong) UILabel *tenthLineDetailLabel;
 @property (nonatomic, strong) UIView *lineView;
 @property (nonatomic, strong) MyCustomModel *model;
-
-+(Class)SubCellClass;
 
 /**
  设置Cell的值

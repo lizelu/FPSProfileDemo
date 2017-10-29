@@ -28,6 +28,9 @@
     self.fifthLineDetailLabel.text = model.fifthText;
     self.sixthLineDetailLabel.text = model.sixthText;
     self.seventhLineDetailLabel.text = model.seventhText;
+    self.eighthLineDetailLabel.text = model.eighthText;
+    self.ninthLineDetailLabel.text = model.ninthText;
+    self.tenthLineDetailLabel.text = model.tenthText;
     [self updateLayoutSubViews];
 }
 
@@ -41,6 +44,9 @@
     _fifthLineDetailLabel = [self createDetailLabel];
     _sixthLineDetailLabel = [self createDetailLabel];
     _seventhLineDetailLabel = [self createDetailLabel];
+    _eighthLineDetailLabel = [self createDetailLabel];
+    _ninthLineDetailLabel = [self createDetailLabel];
+    _tenthLineDetailLabel = [self createDetailLabel];
     [self addLineView];
     [self addLayoutSubViews];
 }
@@ -65,7 +71,7 @@
 
 - (void)addTitlLabel {
     self.titleLabel = [UILabel new];
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
     self.titleLabel.textColor = [UIColor darkTextColor];
     [self.contentView addSubview:self.titleLabel];
 }
@@ -79,7 +85,7 @@
 - (UILabel *)createDetailLabel {
     UILabel *label = [[UILabel alloc] init];
     label.textColor = [UIColor grayColor];
-    label.font = [UIFont systemFontOfSize:15.0f];
+    label.font = [UIFont systemFontOfSize:12.0f];
     [self.contentView addSubview:label];
     return label;
 }
