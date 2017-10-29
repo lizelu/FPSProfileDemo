@@ -11,11 +11,12 @@
 #import "XBaseTableViewCell.h"
 #import "XUpdateLayoutTableViewCell.h"
 #import "XRemakeLayoutTableViewCell.h"
+#import "XMakeLayoutTableViewCell.h"
 
 #define UpdateCellReuseIdentifer @"XUpdateLayoutTableViewCell"
 #define RemakeCellReuseIdentifer @"XRemakeLayoutTableViewCell"
-#define MakeCellReuseIdentifer @"XUpdateLayoutTableViewCell"
-#define FrameCellReuseIdentifer @"XUpdateLayoutTableViewCell"
+#define MakeCellReuseIdentifer @"XMakeLayoutTableViewCell"
+#define FrameCellReuseIdentifer @"XFrameLayoutTableViewCell"
 
 typedef NS_ENUM (NSInteger, MyCellType) {
     UpdateCellType = 0,
@@ -44,6 +45,7 @@ typedef NS_ENUM (NSInteger, MyCellType) {
     self.cellReuseIdentifier = UpdateCellReuseIdentifer;
     [self.tableView registerClass:[XUpdateLayoutTableViewCell class] forCellReuseIdentifier:UpdateCellReuseIdentifer];
     [self.tableView registerClass:[XRemakeLayoutTableViewCell class] forCellReuseIdentifier:RemakeCellReuseIdentifer];
+    [self.tableView registerClass:[XMakeLayoutTableViewCell class] forCellReuseIdentifier:MakeCellReuseIdentifer];
     [self loadData];
 }
 

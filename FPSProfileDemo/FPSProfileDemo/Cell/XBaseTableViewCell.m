@@ -13,6 +13,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self setupSubviews];
     }
     return self;
@@ -73,6 +74,8 @@
     self.titleLabel = [UILabel new];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
     self.titleLabel.textColor = [UIColor darkTextColor];
+    self.titleLabel.layer.masksToBounds = YES;
+    self.titleLabel.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.titleLabel];
 }
 
@@ -86,6 +89,8 @@
     UILabel *label = [[UILabel alloc] init];
     label.textColor = [UIColor grayColor];
     label.font = [UIFont systemFontOfSize:12.0f];
+    label.layer.masksToBounds = YES;
+    label.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:label];
     return label;
 }
