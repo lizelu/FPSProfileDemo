@@ -65,11 +65,14 @@
                             <rect key="frame" x="68" y="7" width="239" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="make"/>
                                 <segment title="update"/>
                                 <segment title="remake"/>
+                                <segment title="make"/>
                                 <segment title="frame"/>
                             </segments>
+                            <connections>
+                                <action selector="tapSegmentControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="24U-DU-Jj7"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>

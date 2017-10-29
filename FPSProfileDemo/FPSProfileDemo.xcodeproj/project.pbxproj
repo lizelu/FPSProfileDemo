@@ -17,6 +17,7 @@
 		F449150D1FA5EA590036560E /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F44915031FA5EA590036560E /* 7.jpg */; };
 		F449150E1FA5EA590036560E /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F44915041FA5EA590036560E /* 8.jpg */; };
 		F449150F1FA5EA590036560E /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F44915051FA5EA590036560E /* 9.jpg */; };
+		F44915121FA5F6A90036560E /* XRemakeLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F44915111FA5F6A90036560E /* XRemakeLayoutTableViewCell.m */; };
 		F4EE5C101FA492CF002D932B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE5C0F1FA492CF002D932B /* AppDelegate.m */; };
 		F4EE5C181FA492CF002D932B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EE5C171FA492CF002D932B /* Assets.xcassets */; };
 		F4EE5C1B1FA492CF002D932B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EE5C191FA492CF002D932B /* LaunchScreen.storyboard */; };
@@ -52,6 +53,8 @@
 		F44915031FA5EA590036560E /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
 		F44915041FA5EA590036560E /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		F44915051FA5EA590036560E /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		F44915101FA5F6A90036560E /* XRemakeLayoutTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRemakeLayoutTableViewCell.h; sourceTree = "<group>"; };
+		F44915111FA5F6A90036560E /* XRemakeLayoutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRemakeLayoutTableViewCell.m; sourceTree = "<group>"; };
 		F4EE5C0B1FA492CF002D932B /* FPSProfileDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPSProfileDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EE5C0E1FA492CF002D932B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4EE5C0F1FA492CF002D932B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				F4EE5C261FA4932F002D932B /* XBaseTableViewCell.m */,
 				F4EE5C571FA4BF84002D932B /* XUpdateLayoutTableViewCell.h */,
 				F4EE5C581FA4BF84002D932B /* XUpdateLayoutTableViewCell.m */,
+				F44915101FA5F6A90036560E /* XRemakeLayoutTableViewCell.h */,
+				F44915111FA5F6A90036560E /* XRemakeLayoutTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				F4EE5C4D1FA49330002D932B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				F4EE5C4B1FA49330002D932B /* MASViewConstraint.m in Sources */,
 				F4EE5C5D1FA4C289002D932B /* NetworkRequest.m in Sources */,
+				F44915121FA5F6A90036560E /* XRemakeLayoutTableViewCell.m in Sources */,
 				F4EE5C591FA4BF84002D932B /* XUpdateLayoutTableViewCell.m in Sources */,
 				F4EE5C561FA4BBA7002D932B /* MyCustomModel.m in Sources */,
 				F4EE5C461FA49330002D932B /* MASCompositeConstraint.m in Sources */,
