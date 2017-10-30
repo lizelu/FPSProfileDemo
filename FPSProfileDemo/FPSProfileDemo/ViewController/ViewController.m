@@ -14,13 +14,15 @@
 #import "XMakeLayoutTableViewCell.h"
 #import "XFrameLayoutTableViewCell.h"
 #import "XMakeAndFrameTableViewCell.h"
+#import "XSubThreadTableViewCell.h"
 
 typedef NS_ENUM (NSInteger, MyCellType) {
     UpdateCellType = 0,
     RemakeCellType,
     MakeCellType,
     FrameCellType,
-    MakeAndFrameCellType
+    MakeAndFrameCellType,
+    UserSubThreadCellType
 };
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -46,6 +48,7 @@ typedef NS_ENUM (NSInteger, MyCellType) {
     [self registCellForTableView:[XMakeLayoutTableViewCell class]];
     [self registCellForTableView:[XFrameLayoutTableViewCell class]];
     [self registCellForTableView:[XMakeAndFrameTableViewCell class]];
+    [self registCellForTableView:[XSubThreadTableViewCell class]];
     [self loadData];
 }
 
@@ -88,6 +91,9 @@ typedef NS_ENUM (NSInteger, MyCellType) {
             break;
         case MakeAndFrameCellType:
             identifier = NSStringFromClass([XMakeAndFrameTableViewCell class]);
+            break;
+        case UserSubThreadCellType:
+            identifier = NSStringFromClass([XSubThreadTableViewCell class]);
             break;
             
     }

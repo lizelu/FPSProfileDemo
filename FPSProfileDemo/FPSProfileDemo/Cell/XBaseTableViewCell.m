@@ -10,6 +10,7 @@
 @interface XBaseTableViewCell()
 @property (nonatomic, strong) dispatch_group_t attrGroup;
 @end
+
 @implementation XBaseTableViewCell
 #pragma - public method
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -21,6 +22,7 @@
     }
     return self;
 }
+
 - (void)setCellInfo:(MyCustomModel *)model {
     self.model = model;
     [self.headerImageView setImage:[UIImage imageNamed:model.headerImageName]];
@@ -36,20 +38,9 @@
     [self setAttributeStringToLabel:self.ninthLineDetailLabel text:model.ninthText];
     [self setAttributeStringToLabel:self.tenthLineDetailLabel text:model.tenthText];
     [self updateLayoutSubViews];
-    
-//    dispatch_group_wait(self.attrGroup, DISPATCH_TIME_FOREVER);
-//    dispatch_group_notify(self.attrGroup, dispatch_get_main_queue(), ^{
-//        [self updateLayoutSubViews];
-//    });
 }
 
 -(void)setAttributeStringToLabel:(UILabel *)label text:(NSString *)text {
-    [self setAttributeStringToLabelInMainThread:label text:text];
-//    [self setAttributeStringToLabelInSubThread:label text:text];
-}
-
--(void)setAttributeStringToLabelInMainThread:(UILabel *)label text:(NSString *)text {
-    
     uint32_t offset = arc4random_uniform(text.length);
     uint32_t length = arc4random_uniform(text.length - offset);
     // 命中词语高亮显示
@@ -58,34 +49,6 @@
     [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
     label.attributedText = attrString;
 }
-
--(void)setAttributeStringToLabelInSubThread:(UILabel *)label text:(NSString *)text {
-    dispatch_group_enter(self.attrGroup);
-    dispatch_group_async(self.attrGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        uint32_t offset = arc4random_uniform(text.length);
-        uint32_t length = arc4random_uniform(text.length - offset);
-        // 命中词语高亮显示
-        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text];
-        NSRange range = NSMakeRange(offset, length);
-        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            label.attributedText = attrString;
-        });
-        dispatch_group_leave(self.attrGroup);
-    });
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        uint32_t offset = rand() % text.length;
-//        uint32_t length = offset + rand() % (text.length - offset);
-//        // 命中词语高亮显示
-//        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text];
-//        NSRange range = NSMakeRange(offset, length);
-//        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            label.attributedText = attrString;
-//        });
-//    });
-}
-
 
 - (void)setupSubviews {
     [self addHeaderImageView];
