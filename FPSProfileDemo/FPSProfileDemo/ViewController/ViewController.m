@@ -20,8 +20,8 @@ typedef NS_ENUM (NSInteger, MyCellType) {
     UpdateCellType = 0,
     RemakeCellType,
     MakeCellType,
-    FrameCellType,
     MakeAndFrameCellType,
+    FrameCellType,
     UserSubThreadCellType
 };
 
@@ -86,11 +86,11 @@ typedef NS_ENUM (NSInteger, MyCellType) {
         case MakeCellType:
             identifier = NSStringFromClass([XMakeLayoutTableViewCell class]);
             break;
-        case FrameCellType:
-            identifier = NSStringFromClass([XFrameLayoutTableViewCell class]);
-            break;
         case MakeAndFrameCellType:
             identifier = NSStringFromClass([XMakeAndFrameTableViewCell class]);
+            break;
+        case FrameCellType:
+            identifier = NSStringFromClass([XFrameLayoutTableViewCell class]);
             break;
         case UserSubThreadCellType:
             identifier = NSStringFromClass([XSubThreadTableViewCell class]);

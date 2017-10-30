@@ -68,9 +68,9 @@
                                 <segment title="update"/>
                                 <segment title="remake"/>
                                 <segment title="make"/>
-                                <segment title="frame"/>
                                 <segment title="m+f"/>
-                                <segment title="thread"/>
+                                <segment title="frame"/>
+                                <segment title="f+t"/>
                             </segments>
                             <connections>
                                 <action selector="tapSegmentControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="24U-DU-Jj7"/>
