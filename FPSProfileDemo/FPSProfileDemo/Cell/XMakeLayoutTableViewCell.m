@@ -66,7 +66,7 @@
 
 - (void)updateLayoutForDetailLabel:(UILabel *)label toLabel:(UILabel *)toLabel
 {
-    [label mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [label mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(toLabel.mas_left);
         make.right.equalTo(toLabel.mas_right);
         CGFloat top = 0;

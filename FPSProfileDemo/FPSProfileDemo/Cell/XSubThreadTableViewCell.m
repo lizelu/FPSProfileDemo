@@ -32,12 +32,7 @@
 -(void)setAttributeStringToLabel:(UILabel *)label text:(NSString *)text {
     dispatch_group_enter(self.attrGroup);
     dispatch_group_async(self.attrGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        uint32_t offset = arc4random_uniform(text.length);
-        uint32_t length = arc4random_uniform(text.length - offset);
-        // 命中词语高亮显示
-        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text];
-        NSRange range = NSMakeRange(offset, length);
-        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
+        NSAttributedString *attrString = [self createAttributeString:text];
         dispatch_async(dispatch_get_main_queue(), ^{
             label.attributedText = attrString;
         });

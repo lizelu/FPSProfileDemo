@@ -47,4 +47,12 @@
  更新控件约束，子类实现
  */
 -(void)updateLayoutSubViews;
+
+/**
+ 随机生成属性字符串
+
+ @param text 原字符串
+ @return 属性字符串
+ */
+-(NSMutableAttributedString *)createAttributeString:(NSString *)text;
 @end

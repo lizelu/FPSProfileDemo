@@ -37,17 +37,38 @@
     [self setAttributeStringToLabel:self.eighthLineDetailLabel text:model.eighthText];
     [self setAttributeStringToLabel:self.ninthLineDetailLabel text:model.ninthText];
     [self setAttributeStringToLabel:self.tenthLineDetailLabel text:model.tenthText];
+    
+    NSTimeInterval startTime = [[NSDate date] timeIntervalSince1970] * 1000;
+    
     [self updateLayoutSubViews];
+    
+    NSTimeInterval endIntervel = [[NSDate date] timeIntervalSince1970] * 1000 - startTime;
+//    NSLog(@"%lf", endIntervel);
 }
 
 -(void)setAttributeStringToLabel:(UILabel *)label text:(NSString *)text {
+    NSTimeInterval startTime = [[NSDate date] timeIntervalSince1970] * 1000;
+    
+    NSAttributedString *tempAttributeString = [self createAttributeString:text];
+    
+    NSTimeInterval attributeStringCreateEndTime = [[NSDate date] timeIntervalSince1970] * 1000;
+    
+    label.attributedText = tempAttributeString;
+    
+    NSTimeInterval labelSetStringEndTime = [[NSDate date] timeIntervalSince1970] * 1000;
+    
+    NSLog(@"%lf\t%lf", attributeStringCreateEndTime - startTime, labelSetStringEndTime - attributeStringCreateEndTime);
+    
+}
+
+-(NSMutableAttributedString *)createAttributeString:(NSString *)text {
     uint32_t offset = arc4random_uniform(text.length);
     uint32_t length = arc4random_uniform(text.length - offset);
     // 命中词语高亮显示
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text];
     NSRange range = NSMakeRange(offset, length);
     [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
-    label.attributedText = attrString;
+    return attrString;
 }
 
 - (void)setupSubviews {

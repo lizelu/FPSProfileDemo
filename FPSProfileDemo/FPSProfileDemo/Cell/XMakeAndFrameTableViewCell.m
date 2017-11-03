@@ -61,14 +61,12 @@
     [self updateLayoutForDetailLabel:self.eighthLineDetailLabel toLabel:self.seventhLineDetailLabel];
     [self updateLayoutForDetailLabel:self.ninthLineDetailLabel toLabel:self.eighthLineDetailLabel];
     [self updateLayoutForDetailLabel:self.tenthLineDetailLabel toLabel:self.ninthLineDetailLabel];
-//    [self setNeedsLayout];
-//    [self layoutIfNeeded];
 }
+
 
 - (void)updateLayoutForDetailLabel:(UILabel *)label toLabel:(UILabel *)toLabel
 {
-    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 0);
-    dispatch_after(time, dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         CGRect frame = label.frame;
         frame.origin.y = 0;
         if (label.text.length) {
@@ -80,10 +78,6 @@
         }
         label.frame = frame;
     });
-}
-
--(void)layoutSubviews {
-    [self updateLayoutSubViews];
 }
 
 @end
