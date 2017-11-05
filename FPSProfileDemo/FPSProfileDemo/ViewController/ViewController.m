@@ -17,12 +17,12 @@
 #import "XSubThreadTableViewCell.h"
 
 typedef NS_ENUM (NSInteger, MyCellType) {
-    UpdateCellType = 0,
-    RemakeCellType,
-    MakeCellType,
-    MakeAndFrameCellType,
-    FrameCellType,
-    UserSubThreadCellType
+    UpdateCellType = 0,     //udpate
+    RemakeCellType,         //remake
+    MakeCellType,           //make + update
+    MakeAndFrameCellType,   //make + frameUpdate
+    FrameCellType,          //Frame
+    UserSubThreadCellType   //Frame + subThread
 };
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
