@@ -5,7 +5,6 @@
 //  Created by lizelu on 2017/10/28.
 //  Copyright © 2017年 Mr.ZeluLi. All rights reserved.
 //
-
 #import <UIKit/UIKit.h>
 #import "MyCustomModel.h"
 #import "Masonry.h"
@@ -28,7 +27,6 @@
 
 /**
  设置Cell的值
-
  @param model 相对应的Model
  */
 -(void)setCellInfo:(MyCustomModel *)model;
@@ -50,7 +48,6 @@
 
 /**
  随机生成属性字符串
-
  @param text 原字符串
  @return 属性字符串
  */
